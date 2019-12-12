@@ -25,6 +25,29 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- ehcache 缓存 -->
+		<dependency>
+		    <groupId>net.sf.ehcache</groupId>
+		    <artifactId>ehcache</artifactId>
+		</dependency>
+		
+		<!--开启缓存支持-->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		
+		<!-- redis -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-pool2</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -49,6 +72,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>
+	                <!-- mvn spring-boot:run 热部署启动 -->
+	                <dependency>
+	                    <groupId>org.springframework</groupId>
+	                    <artifactId>springloaded</artifactId>
+	                    <version>1.2.8.RELEASE</version>
+	                </dependency>
+                </dependencies>
 			</plugin>
 		</plugins>
 	</build>
@@ -58,5 +89,6 @@
     <module>myprojectboot-dao</module>
     <module>myprojectboot-service</module>
     <module>myprojectboot-web</module>
+    <module>myprojectboot-cache</module>
   </modules>
 </project>

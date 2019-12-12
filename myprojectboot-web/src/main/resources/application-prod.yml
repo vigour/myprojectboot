@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /app
+spring:
+  redis:
+    cluster:
+      nodes:
+      - redis.node0.foxconn.com:7000
+      - redis.node1.foxconn.com:7001
+      - redis.node2.foxconn.com:7002
+      - redis.node3.foxconn.com:7003
+      - redis.node4.foxconn.com:7004
+      - redis.node5.foxconn.com:7005
+      max-redirects: 5
+    lettuce:
+      pool:
+        max-active: 3000
+        max-idle: 3000
+        min-idle: 5
+        max-wait: -1
